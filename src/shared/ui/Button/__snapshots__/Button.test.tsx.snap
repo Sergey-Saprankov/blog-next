@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button component snapshot 1`] = `
+<button
+  class="Button clear small"
+>
+  Test
+</button>
+`;
+
+exports[`Button snapshot 1`] = `
+<button
+  class="Button clear small"
+>
+  Test
+</button>
+`;

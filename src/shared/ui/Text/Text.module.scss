@@ -1,0 +1,41 @@
+.Text {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.primary {
+  color: var(--color-primary);
+}
+
+.secondary {
+  color: var(--color-secondary);
+}
+
+.accent {
+  color: var(--color-accent);
+}
+
+.error {
+  color: var(--color-destructive);
+}
+
+.title {
+  font: var(--font-xl);
+}
+
+.text {
+  font: var(--font-m);
+}
+
+.low {
+  font: var(--font-m);
+}
+
+.middle {
+  font: var(--font-l);
+}
+
+.high {
+  font: var(--font-xl);
+}

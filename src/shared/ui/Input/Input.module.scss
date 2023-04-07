@@ -1,0 +1,34 @@
+.Input {
+  width: 100%;
+
+  background: var(--bg-primary);
+}
+
+.label {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.input {
+  max-width: 600px;
+  height: 30px;
+  padding: 0 5px;
+
+  color: var(--color-primary);
+
+  background: var(--bg-secondary);
+  border: 1px solid #121212;
+  border-radius: 5px;
+  outline: none;
+}
+
+.error {
+  position: absolute;
+  bottom: -15px;
+
+  font: var(--font-err);
+  color: var(--color-error);
+}
