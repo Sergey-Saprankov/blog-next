@@ -1,8 +1,8 @@
 import React, { FC, memo, ReactNode } from 'react'
 
-import s from './Text.module.scss'
+import { classNames } from '../../lib/classNames/classNames'
 
-import { classNames } from 'shared/lib/classNames/classNames'
+import s from './Text.module.scss'
 
 export enum TextSize {
   Low = 'low',

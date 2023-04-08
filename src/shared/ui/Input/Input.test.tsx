@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
 
-import { Input } from 'shared/ui/Input/Input'
+import { Input } from './Input'
 
 describe('Input component', () => {
   test('presence in the document', () => {

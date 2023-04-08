@@ -2,9 +2,9 @@ import React, { ChangeEvent, FC, InputHTMLAttributes, memo, ReactNode } from 're
 
 import { FieldErrors, FieldValues, UseFormRegister } from 'react-hook-form'
 
-import s from './Input.module.scss'
+import { classNames } from '../../lib/classNames/classNames'
 
-import { classNames } from 'shared/lib/classNames/classNames'
+import s from './Input.module.scss'
 
 type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>
 

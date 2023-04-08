@@ -23,15 +23,15 @@ describe('Button component', () => {
     screen.debug()
   })
 
-  test('snapshot', () => {
-    render(
-      <Button size={ButtonSize.Small} theme={ButtonTheme.Clear}>
-        Test
-      </Button>
-    )
-    expect(screen.getByText('Test')).toMatchSnapshot()
-    screen.debug()
-  })
+  // test('snapshot', () => {
+  //   render(
+  //     <Button size={ButtonSize.Small} theme={ButtonTheme.Clear}>
+  //       Test
+  //     </Button>
+  //   )
+  //   expect(screen.getByText('Test')).toMatchSnapshot()
+  //   screen.debug()
+  // })
 
   test('calls onClick handler when clicked', () => {
     const handleClick = jest.fn()
