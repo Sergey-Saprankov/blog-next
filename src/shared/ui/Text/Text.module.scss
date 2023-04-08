@@ -1,7 +1,16 @@
 .Text {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
+  color: inherit;
+  word-break: break-word;
+}
+
+.title {
+  font: var(--font-xl);
+  color: inherit;
+}
+
+.text {
+  font: var(--font-m);
+  color: inherit;
 }
 
 .primary {
@@ -12,30 +21,6 @@
   color: var(--color-secondary);
 }
 
-.accent {
-  color: var(--color-accent);
-}
-
 .error {
-  color: var(--color-destructive);
-}
-
-.title {
-  font: var(--font-xl);
-}
-
-.text {
-  font: var(--font-m);
-}
-
-.low {
-  font: var(--font-m);
-}
-
-.middle {
-  font: var(--font-l);
-}
-
-.high {
-  font: var(--font-xl);
+  color: var(--color-error);
 }

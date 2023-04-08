@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
 
-import { Text, TextSize, TextThem } from './Text'
+import { Text, TextTheme } from './Text'
 
 describe('Text component tests', () => {
   test('presence test', () => {
@@ -9,14 +9,14 @@ describe('Text component tests', () => {
   })
 
   test('have class', () => {
-    render(<Text title={'Test'} theme={TextThem.Accent} />)
-    expect(screen.getByText('Test')).toHaveStyle({ color: 'var(--color-accent)' })
+    render(<Text title={'Test'} theme={TextTheme.Primary} />)
+    expect(screen.getByText('Test')).toHaveStyle({ color: 'color: var(--color-primary)' })
     screen.debug()
   })
 
   test('have class', () => {
-    render(<Text text={'test'} textSize={TextSize.Middle} />)
-    expect(screen.getByText('test')).toHaveClass('middle')
+    render(<Text text={'test'} theme={TextTheme.Secondary} />)
+    expect(screen.getByText('test')).toHaveStyle({ color: 'color: var(--color-secondary)' })
     screen.debug()
   })
 })

@@ -1,8 +1,7 @@
-import React, { ChangeEvent, FC, InputHTMLAttributes, memo, ReactNode } from 'react'
-
-import { FieldErrors, FieldValues, UseFormRegister } from 'react-hook-form'
+import { ChangeEvent, FC, InputHTMLAttributes, KeyboardEvent, memo, ReactNode } from 'react'
 
 import { classNames } from '../../lib/classNames/classNames'
+import { Text, TextTheme } from '../Text/Text'
 
 import s from './Input.module.scss'
 
@@ -10,37 +9,40 @@ type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onC
 
 interface InputProps extends HTMLInputProps {
   className?: string
-  children?: ReactNode
   value?: string
   onChange?: (value: string) => void
-  register?: UseFormRegister<FieldValues>
-  registerName?: string
-  error?: string
+  onChangeText?: (value: string) => void
+  children?: ReactNode
+  label?: string
+  error?: string | null
 }
 
 export const Input: FC<InputProps> = memo(
-  ({ className, children, value, onChange, title, register, registerName, error, ...other }) => {
+  ({ className = '', value, onChange, children, label, onChangeText, error, ...otherProps }) => {
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
       onChange?.(e.currentTarget.value)
     }
 
-    const registerParam = registerName && register && register(registerName)
+    const onKeyDownHandler = (e: KeyboardEvent<HTMLInputElement>) => {
+      if (e.key === 'Enter') {
+        onChange?.(e.currentTarget.value)
+      }
+    }
 
     return (
       <div className={classNames(s.Input, {}, [className])}>
-        <label className={s.label}>
-          <span>{title}</span>
+        <label>
+          {label && <Text theme={TextTheme.Secondary} text={label} />}
           <input
-            autoComplete={'off'}
-            {...registerParam}
-            {...other}
-            className={s.input}
+            onKeyDown={onKeyDownHandler}
+            {...otherProps}
             value={value}
             onChange={onChangeHandler}
+            className={s.input}
           />
-          {error && <span className={s.error}>{error}</span>}
-          {children}
         </label>
+        {children}
+        {error && <Text className={s.absolute} theme={TextTheme.Error} text={error} />}
       </div>
     )
   }
